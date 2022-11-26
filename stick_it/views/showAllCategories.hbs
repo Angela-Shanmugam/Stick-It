@@ -1,0 +1,65 @@
+<div class="tableDiv">
+<table>
+    <tr> 
+
+        {{!-- titles --}}
+        <th>Title of category</th>
+        <th>Description</th>
+        
+    </tr>
+     {{#each category}}
+    <tr>
+        <td style="background-color: #{{color_code}}; width: 300px;">{{title}}</td>
+        <td style="background-color: #{{color_code}}; width: 600px;">{{description}}</td>
+        <form action="/category/delete" method="POST" onsubmit="this.action = this.action +'/'+{{category_id}}"> 
+        <td style="background-color: #{{color_code}}" style="width: 30px;"><button class="btn btn-primary" type="submit">Delete</button></td>
+        </form>
+        <form action="/category/update" method="POST" onsubmit="this.action = this.action +'/'+{{category_id}}"> 
+        <td style="background-color: #{{color_code}}" style="width: 30px; max-width:30px"><button class="btn btn-primary" type="submit">Update</button></td>
+        </form>
+        
+    </tr>
+    {{/each}}
+
+</table>
+</div>
+
+
+
+<style>table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+td, th {
+  border: 1px solid #080606;
+  text-align: left;
+  padding: 8px;
+  
+}
+
+tr:nth-child(even) {
+  background-color: #5c9ace;
+}
+tr:nth-child(even):hover{
+     background-color: #5b8eb8; 
+}
+
+tr:nth-child(odd):hover{
+     background-color: #dbe0e4; 
+}
+
+</style>
+{{!-- <script>
+    var source = document.querySelector("#allCategory-template").innerHTML;
+var template = Handlebars.compile(source);
+
+document.body.innerHTML = template();
+
+var button = document.querySelector("#testBtn");
+button.addEventListener('click', function(e){
+    alert('clicked');
+})
+</script> --}}

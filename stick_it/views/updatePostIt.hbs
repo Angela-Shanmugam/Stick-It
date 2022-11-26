@@ -1,0 +1,174 @@
+<body>
+    <div class="container-form" id="update-form">
+      <form class="addPostForm" id={{originalPostItId}} action="/postit/update" method="post" role="form" enctype="application/x-www-form-urlencoded">
+      <h2>Current State of Post It</h2>
+      {{#each currentPostIt}}
+      {{!-- eventually we should probably have two classes here --}}
+      <li style="background-color: #{{color}}" class="post-it" id={{post_id}}>
+
+        {{#if pinned}}
+            <div class="pin">📍</div>
+        {{/if}}
+
+        <h5 class="post-it-title">{{title}}</h5>
+        <p class="post-it-description"> {{description}}</p>
+        <p class="weekday"> {{day_of_week}}</p>
+         </li>
+      {{/each}}
+
+        <h1>{{message}}</h1>
+
+        <label for="description"> Description of Post It </label>
+        <input class="form-control" type="text" id="description" name="description">
+
+        <label for="pinned">
+          <input type="checkbox" id="pinned" name="pinned"/> Urgent: Pin it!
+        </label>
+
+        <select name="weekday" id="weekday" class="form-select postItSelect">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+        </select>
+
+        <select name="category" id="category" class="form-select postItSelect">
+        {{#each category}}
+        <option value={{title}}>{{title}}</option>
+        {{/each}}
+        </select> 
+
+        <button name="post_id" id={{originalPostItId}} value="{{originalPostItId}}" type="submit" class="btn btn-primary postItBtn"> Confirm </button>
+      </form>
+    </div>
+
+<style>
+  
+  li{
+      list-style: none; 
+  }
+  h2{
+      text-align:center;
+  }
+  .post-it{
+    min-width: 275px;
+    min-height: 270px;
+    padding: 2%;
+    margin: 0% 10%;
+    width: 20%;
+    height:20%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    border: 2px solid black;
+}
+
+.pin{
+    grid-column: 3;
+    grid-row: 1;
+    text-align: center;
+}
+
+.post-it-title{
+    font-weight: bold;
+    text-align: center;
+    grid-row: 2;
+    grid-column: 1/6;
+
+}
+.post-it-description{
+    text-align: center;
+    grid-row:3/5;
+    grid-column: 1/6;
+}
+
+.container-form{
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    background-color: rgba(223, 241, 255, 0.861);
+}
+.addPostForm{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 40px;
+    flex-direction: column;
+    margin: 20px;
+    width: 450px;
+    background-color: rgb(220, 237, 254);
+    border-radius: 8px;
+    border: 2px solid rgb(170, 215, 253);
+}   
+.postItSelect{
+    margin-top: 15px;
+    
+}
+.postItBtn{
+    margin-top: 20px;
+}
+#pinned{
+    margin-top: 10px;
+}
+ul li{
+  list-style-type: none;
+}
+ul{
+    list-style: none;
+}
+
+
+footer{
+    margin: 30px;
+    text-align: right;
+}
+.user-navbar{
+    justify-content: flex-end;
+    /* color: pink; */
+}
+
+.navbar-user-container {
+    flex: 1;
+    display: flex;
+}
+
+.navbar-homepage {
+    justify-content: flex-start;
+    /* color: pink; */
+}
+
+.navbar-item {
+    list-style-type: none;
+    background-color: pink;
+    width: 150px;
+    text-align: center;
+}
+
+.navbar-user-item {
+    list-style-type: none;
+    background-color: lightblue;
+    text-align: center;
+    flex: 1;
+}
+#navbarNav{
+
+    display: flex;
+    flex-direction: row;
+
+}
+.navUl{
+   
+    display: flex;
+    flex-direction: row; 
+}
+
+</style>
+
+</body>

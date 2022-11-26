@@ -1,0 +1,346 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+body{
+    background-color: aliceblue;
+    min-height: 1200px;
+}
+:root {
+    --bg-color: aliceblue;
+    --form-bg: rgb(220, 237, 254);
+    --form-border-color : rgb(170, 215, 253);
+    --form-container-color: rgba(223, 241, 255, 0.861);;
+}
+
+
+ul {
+    list-style: none;
+}
+
+footer{
+    margin: 30px;
+    text-align: right;
+}
+
+#home-logo {
+
+    background-color: transparent;
+    border: none;
+}
+
+#container-week-button{
+    text-align: center;
+    margin: 0.3%;
+}
+
+.day-container{
+    background-color: #FFC17A;
+    min-height: 500px;
+
+}
+
+.container-post-it {
+    background-color: lightyellow;
+}
+
+.post-it {
+    background-color: lightblue;
+}
+
+.user-navbar {
+    justify-content: flex-end;
+    /* color: pink; */
+}
+
+.post-it-container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color:#FFC17A;
+}
+.post-it{
+    min-width: 275px;
+    min-height: 270px;
+    padding: 0.2%;
+    margin: 1%;
+    width: 20%;
+    height:20%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.pin{
+    grid-column: 3;
+    grid-row: 1;
+    text-align: center;
+}
+
+.post-it-title{
+    font-weight: bold;
+    text-align: center;
+    grid-row: 2;
+    grid-column: 1/6;
+
+}
+.post-it-description{
+    text-align: center;
+    grid-row:3/5;
+    grid-column: 1/6;
+}
+.edit-button{
+    margin: 0.2%;
+    grid-row: 5;
+    grid-column: 3;
+    text-align: center;
+}
+.remove-button{
+    margin: 0.2%;
+    grid-row: 5;
+    grid-column: 4;
+    text-align: center;
+}
+.checked-button{
+    margin: 0.2%;
+    grid-row: 5;
+    grid-column: 5;
+    text-align: center;
+}
+
+
+.navbar-item {
+    list-style-type: none;
+    width: 200px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    padding: 0.5%;
+}
+
+.navbar-item:hover {
+    background-color:#72bcd4;
+}
+.navbar-user-item {
+    list-style-type: none;
+    background-color: lightblue;
+    text-align: center;
+    flex: 1;
+    padding:2%;
+}
+
+#navbar-logged-in-options{
+    display: flex;
+    background-color: lightblue;
+}
+#navbar-log-out{
+    display: flex;
+}
+
+#navbarNav{
+
+    display: flex;
+    flex-direction: row;
+
+}
+#flex-container{
+    display:flex;
+}
+.form-title {
+    text-align:center;
+}
+#carousel {
+    background-color: aquamarine;
+    min-height: 500px;
+}
+
+#nav-bar-top
+{
+    display: flex;
+}
+
+#logo{
+    flex:1;
+}
+#nav-bar-user-setting{
+    flex:1;
+}
+#nav-bar-logged-in-options{
+    display: flex;
+    flex: flex-wrap;
+    justify-content: space-between;
+}
+#nav-bar-visitor{
+    background-color:white;
+    height: 50px;
+    font-size: 20px;
+}
+
+#pin-name{
+    font-size: 30px;
+    font-weight: 900;
+}
+.navbar-visitor{
+    padding: 0.2%;
+}
+
+.nav-bar-log-out{
+    display: flex;
+}
+
+.btnContainer{
+    display: flex;
+    align-items: flex-end;
+}
+/* The about page */
+.aboutDev{
+    background-color: antiquewhite;
+
+}
+.devImage{
+    max-height: 150px;
+    margin: 20px;
+}
+.img{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+
+ width: 250px;
+ transition: transform .2s; /* Animation */
+}
+.img:hover{
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.aboutText{
+   margin: 10px;
+   font-size: larger;
+}
+.aboutDev{
+    display: flex;
+    flex-direction: row;
+}
+.aboutDev:nth-child(even){
+    flex-direction: row-reverse;
+    background-color: rgb(249, 225, 194);
+}
+.devDesc{
+    margin: 10px;
+}
+/* Pin it Logo */
+.logo{
+    font-style: none;
+    max-height: 100px;
+}
+.logoImg{
+    max-height: 90px;
+    margin: 10px;
+}
+
+#categoryForm{
+    background-color: var(--form-container-color) ;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+}
+.categoryAdd{
+    background-color: var(--form-bg);
+}
+.colorSelect{
+   align-items: center;
+    
+}
+.theForm{
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 2px solid var(--form-border-color);
+    border-radius: 8px;
+    background-color: var(--form-bg);
+}
+
+.container-form{
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    background-color: rgba(223, 241, 255, 0.861);
+}
+.addPostForm{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 40px;
+    flex-direction: column;
+    margin: 20px;
+    width: 450px;
+    background-color: rgb(220, 237, 254);
+    border-radius: 8px;
+    border: 2px solid rgb(170, 215, 253);
+}   
+.postItSelect{
+    margin-top: 15px;
+    
+}
+.postItBtn{
+    margin-top: 30px;
+    align-items: center;
+    width: fit-content;
+}
+#pinned{
+    margin-top: 10px;
+}
+.wideButton{
+  
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+.tableDiv{
+    margin: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+.carousel {
+    /* width:720px;
+    height:500px; */
+    height: fit-content;
+    
+  }
+
+#carousel{
+
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    overflow: hidden;
+    
+
+}
+.post-it{
+    word-wrap: break-word; 
+}
+.post-it-title .post-it-description{
+    margin: 5px;
+}
+.post-it .post-it-weekday{
+    word-wrap: normal;
+}

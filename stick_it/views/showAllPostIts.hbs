@@ -1,0 +1,17 @@
+<h1 class="form-title"> {{message}} </h1>
+<div>
+    <ul class="post-it-container"> 
+    {{#each postIt}}
+    {{!-- eventually we should probably have two classes here --}}
+        <li class="post-it" id={{post_id}} style="background-color: #{{color}}" >
+            {{#if pinned}}
+            <div class="pin">📍</div>
+            {{/if}}
+            <h5 class="post-it-title">{{title}}</h5>
+            <p class="post-it-description"> {{description}}</p>
+            <p class="post-it-weekday"> {{day_of_week}}</p>
+            </li>
+    {{/each}}
+    </ul>
+
+</div>

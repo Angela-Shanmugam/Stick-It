@@ -1,0 +1,138 @@
+<body>
+  
+  <div id="categoryForm">
+    
+<form class="theForm" action="/updated" method="POST" role="form" enctype="application/x-wwgitw-form-urlencoded">
+<legend><h1 class="form-title"> Update Category</h1></legend>
+  <div class="mb-3">
+    <label for="title" class="form-label">Category Name</label>
+    <input value="{{category.title}}" type="text" class="form-control" id="name" name="name">
+    <div id="emailHelp" class="form-text">The category you would like to assign to your post-its.</div>
+  </div>
+  <div class="mb-3">
+    <label for="categoryDescription" class="form-label">Description</label>
+    <input value="{{category.description}}" type="text" class="form-control" id="description" name="description">
+  </div>
+ 
+    <select class="form-select" id="color" for="color" name="color">
+        {{!-- <option value="">Default</option> --}}
+        {{#each colors}}
+        <option value={{color_code}}>{{color_name}}</option>
+        {{/each}}
+    </select>
+
+      <input type="text" readonly="true" style="display: none;" value="{{category.category_id}}" id="id" name="id">
+  <button type="submit" class="btn btn-primary submitBtn wideButton">Submit</button>
+</form>
+
+
+</div>
+<style>
+* {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+body{
+    background-color: aliceblue;
+    min-height: 1200px;
+}
+:root {
+    --bg-color: aliceblue;
+    --form-bg: rgb(220, 237, 254);
+    --form-border-color : rgb(170, 215, 253);
+    --form-container-color: rgba(223, 241, 255, 0.861);;
+  }
+
+  /* Navbar */
+.user-navbar{
+    justify-content: flex-end;
+    /* color: pink; */
+}
+
+.navbar-user-container {
+    flex: 1;
+    display: flex;
+}
+
+.navbar-homepage {
+    justify-content: flex-start;
+    /* color: pink; */
+}
+
+.navbar-item {
+    list-style-type: none;
+    background-color: pink;
+    width: 150px;
+    text-align: center;
+}
+
+.navbar-user-item {
+    list-style-type: none;
+    background-color: lightblue;
+    text-align: center;
+    flex: 1;
+}
+#navbarNav{
+
+    display: flex;
+    flex-direction: row;
+
+}
+.navUl{
+   
+    display: flex;
+    flex-direction: row; 
+}
+
+.logo{
+    font-style: none;
+    max-height: 100px;
+}
+.logoImg{
+    max-height: 40px;
+    margin: 10px;
+}
+
+#categoryForm{
+    background-color: var(--form-container-color) ;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+}
+.categoryAdd{
+    background-color: var(--form-bg);
+}
+.colorSelect{
+    width: 100px;
+    
+}
+.theForm{
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 2px solid var(--form-border-color);
+    border-radius: 8px;
+    background-color: var(--form-bg);
+}
+footer{
+    margin: 30px;
+    text-align: right;
+}
+.wideButton{
+  
+    margin-top: 25px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+#color{
+  margin-top: 15px;
+}
+</style>
+
+</body>

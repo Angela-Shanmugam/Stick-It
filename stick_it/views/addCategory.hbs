@@ -1,0 +1,26 @@
+<body>
+  <div id="categoryForm">
+    <div class="theForm">
+      <h1 class="form-title">{{message}}</h1> 
+      <form class="categoryAdd" action="/categoryform" method="POST" role="form" enctype="application/x-wwgitw-form-urlencoded">
+        <div class="mb-3">
+          <label for="title" class="form-label">Category Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+          <div id="categoryName" class="form-text">The category you would like to assign to your post-its.</div>
+          </div>
+          <div class="mb-3">
+          <label for="categoryDescription" class="form-label">Description</label>
+          <input type="text" class="form-control" id="description" name="description">
+          </div>
+          {{!-- <div class="form-check"> --}}
+          <select class="form-select colorSelect" id="color" for="color" name="color">
+          {{#each colors}}
+          <option value={{color_code}}>{{color_name}}</option>
+          {{/each}}
+          </select>
+          {{!-- </div> --}}
+        <button type="submit" class="btn btn-primary wideButton">Confirm</button>
+      </form>
+    </div>
+  </div>
+</body>
